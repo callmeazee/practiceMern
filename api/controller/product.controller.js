@@ -53,3 +53,11 @@ export const deleteProduct = async (req, res)=>{
         res.status(500).json({message: err.message})
     }
 }
+export const deleteProductsById = async(req,res) => {
+    try {
+   
+        
+    } catch (err) {
+        res.status(500).json({message:err.message})
+    }
+}
