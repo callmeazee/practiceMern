@@ -14,6 +14,10 @@ const productSchema = new Schema({
     discount: {
         type: Number,
         default: 0
+    },
+    stock: {
+        type: Number,
+        default : 1
     }
 }, {timestamps: true})
 
