@@ -7,6 +7,7 @@ mongoose.connect(process.env.DB)
 import express from  'express'
 import cors from 'cors'
 import { createProduct, deleteProduct, fetchProducts, updateProduct } from './controller/product.controller.js'
+import ProductRouter from './routes/product.route.js'
 const app = express()
 app.listen(process.env.PORT || 8080, () => {
      console.log("connected")
@@ -16,7 +17,8 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
-app.post("/product", createProduct)
-app.get("/product", fetchProducts)
-app.put("/product/:id", updateProduct)
-app.delete("/product/:id", deleteProduct)
+// app.post("/product", createProduct)
+// app.get("/product", fetchProducts)
+// app.put("/product/:id", updateProduct)
+// app.delete("/product/:id", deleteProduct)
+app.use("/api", ProductRouter)
