@@ -77,8 +77,18 @@ export const deleteProductsById3 = async (req, res) => {
   }
 };
 
-
 export const deleteProductsById24 = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const product = await ProductModel.findByIdAndDelete(id);
+    const session = await ProductModel.findOneAndDelete(req.body);
+    res.json({ message: "product deleted successfully" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+export const deleteProductsById25 = async (req, res) => {
   try {
     const { id } = req.params;
     const product = await ProductModel.findByIdAndDelete(id);
