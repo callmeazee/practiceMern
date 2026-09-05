@@ -88,7 +88,7 @@ export const deleteProductsById24 = async (req, res) => {
   }
 };
 
-export const deleteProductsById32 = async (req, res) => {
+export const deleteProductsById33 = async (req, res) => {
   try {
     const { id } = req.params;
     const product = await ProductModel.findByIdAndDelete(id);
